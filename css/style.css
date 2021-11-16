@@ -1,0 +1,396 @@
+/* ここから下に記載していく */
+@charset "utf-8";
+
+/* 全体共通 */
+body {
+    width: 1200px;
+    margin: 0 auto;
+    color: #222222;
+    font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック";
+    font-size: 16px;
+    
+    text-align: center;
+}
+
+    /* 画像の大きさ設定 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+    /* テキストの行間設定 */
+p {
+    line-height: 1.7em;
+}
+
+    /* aタグの下線表示無し */
+a {
+    text-decoration: none;
+}
+
+    /* 黄色文字のタイトルに適用 */
+.navigation_title1 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffd61a;
+    margin-bottom: 30px;
+}
+
+    /* 黒文字のタイトルに適用 */
+.navigation_title2 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+    /* メニュータイトル下の日本語タイトルに適用 */
+.title {
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+/* ロゴとメニューバー */
+.header {
+    display: flex;
+    position: relative;
+}
+
+.header_logo {
+    padding: 20px
+}
+
+    /* navigationボタン全体 */
+.navigation {
+    display: flex;
+    position: absolute;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    right: 0px;
+    font-size: 21px;
+   
+}
+
+    /* navigation個別ボタン */
+.navigation_button {
+    margin-right: 50px;
+}
+
+.navigation_button>a {
+    text-transform: uppercase;
+    color: #222222;
+}
+
+
+/* メイン画像への文字乗せ */
+.MainBox {
+    position: relative;
+}
+
+.main_text {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate3d(-50%,-50%,0);
+    color: azure;
+        }
+
+    /* --上乗せテキスト１行目-- */
+.main_text1 {
+    margin-bottom: 30px;
+    white-space: nowrap;
+    font-size: 40px;
+    letter-spacing: 0.1em;
+    }
+
+    /* --上乗せテキスト２行目-- */
+.main_text2 {
+    white-space: nowrap;
+    font-size: 30px;
+    letter-spacing: 0.1em;  
+}
+
+/* ABOUT箇所 */
+#about {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.about_img {
+    display: flex;
+    width: 300px;
+    height: auto;
+}
+
+.sentence {
+    margin-bottom: 40px;
+}
+
+/* COURSE箇所 */
+#course {
+    margin: 60px 0;
+}
+
+.course_text {
+    margin-bottom: 60px;
+}
+
+.course_contents_wrapper {
+    background-color: #fafafa;
+    text-align: left;
+}
+
+/* display: flexで横並びにした後、:nth-child(even)で偶数行のみ逆にする */
+.course_contents li {
+    display: flex;
+    gap: 0 50px;
+    width: 1200px;
+    align-items: center;
+}
+
+.course_contents li:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.course_contents img {
+    width: 600px;
+    height: auto;
+}
+
+.course_contents_text {
+    white-space: nowrap;
+    width: 430px;
+}
+
+.course_contents h3 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #222222;
+    margin-bottom: 40px;
+}
+
+/* NEWS箇所 */
+.news_contents {
+    max-width: 1020px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.info {
+    width: 300px;
+    margin: 0 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.info h3 {
+    margin-top: 30px;
+    margin-bottom: 24px;
+}
+
+.info p{
+    line-height: 2.0em;
+}
+
+    /* マウスを載せたら色が黒くなるhover設定 */
+.info_img {
+    position: relative;
+}
+
+.info_img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: background-color 0.5s;
+}
+
+.info_img:hover::before {
+    background-color: rgba(0, 0, 0, 0.4);
+   }
+
+.more {
+    color: #222222;
+    display: block;
+    margin: 60px 50%;
+    font-size: 18px;
+    line-height: 60px;
+    width: 300px;
+    transform: translate3d(-50%,0,0);
+}
+
+    /* マウスを載せたらボタンが黄色くなるhover設定 */
+.more:hover {
+    color: white;
+    background-color: #ffd61a;
+}
+
+/* ACCESS箇所 */
+#access {
+    background-color: #fafafa;
+    padding: 60px 0;
+}
+
+.school_info {
+    width: 50%;
+    margin: 60px auto;
+    line-height: 50px;
+}
+
+/* flex-wrap: wrapと、dt・ddの幅計を100％にして合わせることで、
+    項目・内容が2列の表になる */
+.school_info dl {
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    letter-spacing: 0em;
+}
+
+.school_info dt {
+    width: 30%;
+    text-align: left;
+}
+
+.school_info dd {
+    width: 70%;
+    text-align: left;
+}
+
+/* CONTACT箇所 */
+#contact {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.contact_text1 {
+    margin-bottom: 30px;
+}
+
+.contact_text2 {
+    margin-bottom: 70px;
+}
+
+.contact_form{
+    font-size: 14px;
+}
+
+.contact_form dl{
+    display:flex;
+    flex-wrap: wrap;
+    width: 641px;
+    margin: auto;
+    border-top: solid #bfbfbf;
+}
+
+.form_title {
+    width: 160px;
+    padding: 19px 64px 19px 16px;
+    text-align: left;
+    height: 16px;
+    border-bottom: solid #bfbfbf;
+    letter-spacing: 0;
+}
+
+.form_title.check-radio1 {
+    padding-bottom: 135px;
+}
+
+.form_title.check-radio2 {
+    padding-bottom: 139.67px;
+}
+
+.form_item {
+    width: 400px;
+    text-align: left;
+    padding: 8px 0;
+    border-bottom: solid #bfbfbf;
+    border-left: solid thin #bfbfbf;
+}
+
+.form_parts {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 0 0 8px;
+    margin-left: 8px;
+    width: 320px;
+    height: 36px;
+    border: solid thin #bfbfbf;
+}
+
+.select-reqired {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 0 0 8px;
+    margin-left: 8px;
+    width: 328px;
+    height: 36px;
+    border: solid thin #bfbfbf;    
+}
+
+    /* ラジオボタンの形状設定 */
+input[type*="radio"]{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    margin: 0 25px 0 0;
+    border: solid 1px #bfbfbf;
+    vertical-align: middle;    
+}
+
+    /* ラジオボタン（選択後）の形状設定 */
+input[type*="radio"]:checked{
+    background-color: #bfbfbf;
+}
+
+.form_label {
+    margin-left: 8px;
+    letter-spacing: 0;
+    line-height: 38px;
+}
+
+.form_parts_textarea{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-left: 8px;
+    padding: 8px 8px 0 8px;
+    width: 320px;
+    height: 144px;
+    border: solid thin #bfbfbf;
+    font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック";
+}
+
+.submit {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    margin: 30px 50% 140px 50%;
+    font-size: 18px;
+    line-height: 60px;
+    width: 300px;
+    transform: translate3d(-50%,0,0);
+    border: none;
+}
+
+    /* マウスを載せたらボタンが黄色くなるhover設定 */
+.submit:hover {
+    color: white;
+    background-color: #ffd61a;
+}
+
+/* Footer */
+.footer {
+    padding: 30px 0;
+    background-color: #707070;
+    color: azure;
+    height: 76px;
+}
